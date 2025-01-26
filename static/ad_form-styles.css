@@ -120,3 +120,12 @@ position:absolute;
 left:25%;
 height:110vh;
 }
+
+   .background-stripe{
+    width:90%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    filter:blur(50px);
+    position: fixed;
+    left:5%;
+  }
