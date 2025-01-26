@@ -1,0 +1,122 @@
+*{margin:0;padding:0;}
+
+body{
+background-color: rgb(30,30,30);
+min-height:110vh;
+}
+
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    color:antiquewhite;
+
+
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border:none;
+    border-left: solid orange 0.5vh;
+    border-right: solid orange 0.5vh;
+    border-top:solid 0.5vh transparent;
+    border-bottom:solid 0.5vh transparent;
+    background-color:antiquewhite;
+}
+input[type="number"]{
+    background-color:antiquewhite;
+    border:none;
+    border-left: solid orange 0.5vh;
+    border-right: solid orange 0.5vh;
+    border-top:solid 0.5vh transparent;
+    border-bottom:solid 0.5vh transparent;
+    width:50%;
+}
+textarea {
+    height: 150px;
+}
+
+#imagePreview {
+    margin-top: 10px;
+}
+#imagePreview img {
+    max-width: 100px;
+    margin: 5px;
+}
+
+
+ footer{
+    z-index: 11111;
+    background-color: rgb(25,25,25);
+    height: 4.75vh;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-top: solid 0.25vh antiquewhite;
+    font-family: fantasy;
+    color:antiquewhite;
+    font-size: 3vh;
+    text-align:center;
+  }
+
+
+  header{
+    font-family: fantasy;
+    color:antiquewhite;
+    font-size: 3vh;
+    padding-left: 3%;
+    z-index: 1111;
+    position: fixed;
+    background-color: rgb(25,25,25);
+    width:100%;
+    height: 4.75vh;
+    top:0;
+    border-bottom: solid 0.25vh antiquewhite;
+
+  }
+
+
+
+.my-button:hover{
+  color: antiquewhite;
+  font-size:3.5vh;
+}
+
+.my-button:active{
+  color: antiquewhite;
+  font-size: 28.5px;
+  scale: 0.95;
+}
+.my-button{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 3vh;
+  width: 70%;
+  height: 5vh;
+  transition: ease 0.1s;
+  border-radius: 0;
+  border:0;
+  border-left: 0.3vh solid rgb(25,25,25);
+  border-right: 0.3vh solid rgb(25,25,25);
+  position: relative;
+  top:2vh;
+  background-color: orange;
+  background: linear-gradient(180deg, orange 0%, rgb(255, 182, 72) 50%, orange 100%);
+  padding-left: 2px;
+  padding-right:2px;
+}
+
+.wrap{
+text-align:center;
+padding-top:2vh;
+background-color:rgb(45,45,45);
+width:50%;
+position:absolute;
+left:25%;
+height:110vh;
+}

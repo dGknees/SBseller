@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Ads</title>
+</head>
+<body>
+    <h1>My Ads</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Ship name</th>
+                <th>Responses</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ad in ads %}
+            <tr>
+                <td>{{ ad.id }}</td>
+                <td>{{ ad.responses|length }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('ad_form') }}">Create New Ad</a>
+</body>
+</html>

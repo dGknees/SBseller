@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Ad</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ad_form-styles.css') }}">
+
+</head>
+<body>
+<header>GND<sub style="color:orange;">ind</sub></header>
+<div class="wrap">
+        <form method="POST" enctype="multipart/form-data">
+        <label for="id">Name</label>
+        <input type="text" name="id" required>
+
+        <label for="text">Description:</label>
+        <textarea name="text" required></textarea>
+
+        <label for="speed">Speed:</label>
+        <input type="number" name="speed" min="0" required>
+        {% for field in flds %}
+        <label for="{{field}}">{{field}}:</label>
+        <input type="number" name="{{field}}" min="0" required>
+        {% endfor %}
+
+        <label for="images">Images (multiple files allowed):</label>
+        <input type="file" name="images" multiple accept="image/*" id="imageInput">
+
+        <div id="imagePreview"></div>
+
+        <button class="my-button" type="submit">UPLOAD</button>
+    </form>
+</div>
+    <footer></footer>
+    <script>
+        document.getElementById('imageInput').addEventListener('change', function(event) {
+            const preview = document.getElementById('imagePreview');
+            preview.innerHTML = '';
+
+            for (const file of event.target.files) {
+                if (file.type.startsWith('image/')) {
+                    const img = document.createElement('img');
+                    img.src = URL.createObjectURL(file);
+                    preview.appendChild(img);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

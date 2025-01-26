@@ -1,0 +1,309 @@
+*{margin: 0;
+padding: 0;}
+
+  body{
+    background-color: rgb(30,30,30);
+  }
+  .sort-menu{
+    z-index: 99999;
+    background-color: rgb(30,30,30);
+    width:100%;
+    height:49vh;
+    border-bottom: solid orange 1vh;
+    position: fixed;
+    top:-50vh;
+    transition: all ease 0.5s;
+  }
+  header>form{
+    display: inline;
+  }
+  .sort-menu::after{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 6vh;
+    content:'HOVER OVER FOR SORT MENU';
+    width:20%;
+    background-color: rgb(30,30,30);
+    height: 5vh;
+    bottom:-5vh;
+    color: antiquewhite;
+    display: block;
+    left:30%;
+    position: absolute;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: solid antiquewhite 2px;
+    border-top:0;
+  }
+  .sort-menu:hover{
+    top:0;
+  }
+  .sort-menu-container{
+    margin-top:1vh;
+    display: flex;
+    flex-direction: row;
+  }
+  .sort-menu-container > .my-button{
+    position:relative;
+    top:0;
+    left:0;
+    min-width: 6%;
+    width:auto;
+    margin:0.5%;
+    padding-left:0.01%;
+    padding-right:0.01%;
+  }
+
+
+  .background-stripe{
+    width:90%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    filter:blur(50px);
+    position: fixed;
+    left:5%;
+  }
+  .container{
+
+    border: 2px wheat;
+    width: 100%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    position: relative;
+    top:5vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  * input[type=radio]{
+    cursor: pointer;
+  }
+  .content{
+
+    transition: transform 0.5s;
+    background-color: rgb(45, 45, 45);
+    width: 400px;
+    height: 500px;
+    margin:2%;
+    display: block;
+    text-align: center;
+    position: relative;
+    margin-bottom: 14vh;
+
+
+  }
+  .content.moving{
+    transition: transform 0.5s;
+  }
+  .previews {
+    z-index: 1;
+    width: 352px;
+    height: 198px;
+    background-color: black;
+    border: 2px solid antiquewhite;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+
+    top:24px;
+    left:24px;
+  }
+  .content > input{
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+  .image-item{
+    z-index: 1;
+    flex: 0 0 352px;
+    width:352px;
+    height: 198px;
+    background-color: red;
+  }
+  .image-item:nth-child(even){
+    background-color: black;
+  }
+  header{
+    font-family: fantasy;
+    color:antiquewhite;
+    font-size: 3vh;
+    padding-left: 25px;
+    z-index: 1111;
+    position: fixed;
+    background-color: rgb(25,25,25);
+    width:100%;
+    height: 4.75vh;
+    top:0;
+    border-bottom: solid 0.25vh antiquewhite;
+  }
+  footer{
+    z-index: 11111;
+    background-color: rgb(25,25,25);
+    height: 4.75vh;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-top: solid 0.25vh antiquewhite;
+    font-family: fantasy;
+    color:antiquewhite;
+    font-size: 3vh;
+    text-align:center;
+  }
+
+  .content-stats{
+    padding: 2px;
+    color:antiquewhite;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 348px;
+    height: 220px;
+    font-size: 18px;
+    position: relative;
+    top:24px;
+    left:24px;
+    background-color: rgb(45,45,45);
+    border-left: solid 3px orange;
+    border-right:solid 3px orange;
+    border-top:solid 5px transparent;
+    border-bottom:solid 5px transparent;
+    display: block;
+    overflow: scroll;
+  }
+
+
+  .content-stats::-webkit-scrollbar {
+    display: none;
+}
+.nametag{
+    text-indent: 5px;
+    color:antiquewhite;
+    position: absolute;
+    text-align: center;
+    background-color: rgb(15,15,15);
+    font-size: 24px;
+    height: 30px;
+    width: 100%;
+    top:-35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: fantasy;
+    font-weight: lighter;
+    text-align: center;
+    border-top: solid 5px orange;
+}
+
+.nametag.overflow:hover {
+  width: 670px;
+  transition: background-color 0.5s ease-in-out 0.2s, text-shadow 1s ease-in-out 0.2s, width 0.2s ease;
+
+  min-width: 100%;
+  z-index: 9999;
+  left: 50%;
+  transform: translateX(-50%);
+  border: solid 2px orange;
+  border-bottom: 0;
+  border-top: solid 5px orange;
+  background-color: rgb(35,35,35);
+  text-shadow:
+  2px 2px 0 black,
+  -2px 2px 0 black,
+  2px -2px 0 black,
+  -2px -2px 0 black;
+}
+
+
+.nametag-stripe{
+  z-index: 10;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 24px;
+  top:0px;
+  background: orange;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 166, 0, 0.434) 0%, rgba(252,70,70,0) 80%);
+}
+
+.more-button-wrap{
+  background-color:rgb(45, 45, 45);
+  position: absolute;
+  width:50%;
+  height: 50px;
+  left:25%;
+  bottom:-50px;
+}
+
+.my-button{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+  width: 190px;
+  height: 40px;
+  transition: ease 0.1s;
+  border-radius: 0;
+  top:-10px;
+  border:0;
+  border-left: 3px solid rgb(25,25,25);
+  border-right: 3px solid rgb(25,25,25);
+  position: absolute;
+  left:5px;
+  background-color: orange;
+  background: linear-gradient(180deg, orange 0%, rgb(255, 182, 72) 50%, orange 100%);
+  padding-left: 2px;
+  padding-right:2px;
+}
+
+.more-button-wrap::before{
+  content:'';
+  position: absolute;
+  right: -100px;
+  bottom:0;
+
+  width: 0;
+	height: 0;
+	border-top: 50px solid rgb(45, 45, 45);
+	border-right: 100px solid transparent;
+}
+.more-button-wrap::after{
+  content:'';
+  position: absolute;
+  left: -100px;
+  bottom:0;
+
+  width: 0;
+	height: 0;
+	border-bottom: 50px solid transparent;
+	border-right: 100px solid rgb(45, 45, 45);
+}
+
+.my-button:hover{
+  text-shadow:
+  1px 1px 0 antiquewhite,
+  -1px 1px 0 antiquewhite,
+  1px -1px 0 antiquewhite,
+  -1px -1px 0 antiquewhite;
+  scale: 1.05;
+}
+
+.my-button:active{
+  color: antiquewhite;
+  font-size: 28.5px;
+  scale: 0.95;
+}
+
+.logwrap>.my-button{
+  left:-150px;
+  top:0;
+  position: relative;
+  float: right;
+  height: 35px;
+  width:80px;
+  font-size:15px;
+
+}
+.logwrap>.my-button:active{
+  color: antiquewhite;
+  font-size: 13px;
+  scale: 0.95;
+}

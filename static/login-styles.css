@@ -1,0 +1,135 @@
+*{margin:0;padding:0;}
+
+body{
+background-color: rgb(30,30,30);
+}
+
+.login-container{
+    background-color: cyan;
+    width: 30%;
+    height: 28vh;
+    position: absolute;
+    left: 35%;
+    top:30vh;
+    background-color: rgb(45, 45, 45);
+}
+
+form {
+    color:antiquewhite;
+    width:80%;
+    left:10%;
+
+    text-align:center;
+    position:relative;
+    top:4vh;
+    height:20vh;
+    font-size:2.5vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-left: solid 0.3vh orange;
+    border-right:solid 0.3vh orange;
+    border-top: solid 0.3vh transparent;
+    border-bottom: solid 0.3vh transparent;
+}
+.form-nametag{
+    background-color: rgb(15,15,15);
+    width:30%;
+    height 5vh;
+    position:absolute;
+    left: 35%;
+    top:27vh;
+    font-size:3vh;
+    text-align:center;
+    color:antiquewhite;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.login-container::before{
+    content:'';
+    position:fixed;
+
+    width:30%;
+    height:3vh;
+    background: orange;
+    background: radial-gradient(ellipse at 50% 0%, rgba(255, 166, 0, 0.434) 0%, rgba(252,70,70,0) 80%);
+}
+
+.my-button{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 3vh;
+  width: 70%;
+  height: 5vh;
+  transition: ease 0.1s;
+  border-radius: 0;
+  border:0;
+  border-left: 0.3vh solid rgb(25,25,25);
+  border-right: 0.3vh solid rgb(25,25,25);
+  position: relative;
+  top:2vh;
+  background-color: orange;
+  background: linear-gradient(180deg, orange 0%, rgb(255, 182, 72) 50%, orange 100%);
+  padding-left: 2px;
+  padding-right:2px;
+}
+.form-nametag::after{
+    content:'';
+    background-color:orange;
+    width:30%;
+    height:0.5vh;
+    left:35%;
+    top:26.5vh;
+    position:fixed;
+
+}
+
+.my-button:hover{
+  color: antiquewhite;
+  font-size:3.5vh;
+}
+
+.my-button:active{
+  color: antiquewhite;
+  font-size: 28.5px;
+  scale: 0.95;
+}
+
+
+  footer{
+    z-index: 11111;
+    background-color: rgb(25,25,25);
+    height: 4.75vh;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-top: solid 0.25vh antiquewhite;
+    font-family: fantasy;
+    color:antiquewhite;
+    font-size: 3vh;
+    text-align:center;
+  }
+
+
+  header{
+    font-family: fantasy;
+    color:antiquewhite;
+    font-size: 3vh;
+    padding-left: 3%;
+    z-index: 1111;
+    position: fixed;
+    background-color: rgb(25,25,25);
+    width:100%;
+    height: 4.75vh;
+    top:0;
+    border-bottom: solid 0.25vh antiquewhite;
+  }
+
+ input{
+ background-color:red;
+ width:70%;
+ height:3vh;
+ background-color:antiquewhite;
+ border:none;
+ border-left: solid 0.3vh orange;
+  border-right: solid 0.3vh orange;
+  border-top: solid 0.3vh transparent;
+  border-bottom: solid 0.3vh transparent;
+  font-size: 2vh;
+ }

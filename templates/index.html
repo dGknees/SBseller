@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ads</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='listing-styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>GND<sub style="color:orange;">ind</sub>
+            {% if current_user.is_authenticated %}
+                <form class="logwrap" action="{{ url_for('logout') }}" method="get">
+                    <button class="my-button" type="submit">LOGOUT</button>
+                </form>
+                <form class="logwrap" action="{{ url_for('ad_form') }}" method="get">
+                    <button class="my-button" type="submit">MAKE AD</button>
+                </form>
+                <form class="logwrap" action="{{ url_for('my_ads') }}" method="get">
+                    <button class="my-button" type="submit">MY ADS</button>
+                </form>
+                <form class="logwrap" action="{{ url_for('my_responses') }}" method="get">
+                    <button class="my-button" type="submit">MY SHIPS</button>
+                </form>
+            {% else %}
+                <form class="logwrap" action="{{ url_for('login') }}" method="get">
+                    <button class="my-button" type="submit">LOGIN</button>
+                </form>
+                <form class="logwrap" action="{{ url_for('register') }}" method="get">
+                    <button class="my-button" type="submit">REGISTER</button>
+                </form>
+            {% endif %}
+    </header>
+
+
+    <div class="sort-menu">
+        <div class="sort-menu-container">
+            <button class="my-button">option1</button>
+            <button class="my-button">option2</button>
+            <button class="my-button">ab</button>
+            <button class="my-button">veryfuckinglongoption</button>
+        </div>
+    </div>
+
+    <div class="background-stripe"></div>
+
+
+
+    <div class="container">
+            {% for ad in ads %}
+        <div class="content">
+            <div class="previews" data-scroll-direction="1">
+                {% for image_path in ad.image_paths %}
+                <div class="image-item">
+                    <img style="width:352px; height:198px" src="{{ url_for('static',filename=image_path) }}" alt="Изображение">
+                </div>
+                {% endfor %}
+            </div>
+            <div class="content-stats">
+                <b>STATS</b><br>
+
+                <b>speed: </b>{{ad.speed}}
+
+                <hr>
+                <br>
+                <b>RESOURCE COST</b> <br>
+
+                {% for mat,amount in ad.matAmounts %}
+
+                <b>{{mat}}: </b>{{amount}}<br>
+                {% endfor %}
+
+                <hr>
+                <br>
+                <b>DESCRIPTION</b><br>
+                {{ ad.text }}
+            </div>
+            <div class="nametag">{{ad.id}}</div>
+            <div class="nametag-stripe"></div>
+            <div class="more-button-wrap">
+                <form  method="POST" action="{{ url_for('respond_ad', ad_id=ad.id) }}">
+                    <button class="my-button" type="submit">RESPOND</button>
+                </form>
+            </div>
+        </div>
+            {% endfor %}
+    </div>
+
+    <footer>{% if current_user.is_authenticated %}
+        <span>Welcome, {{ current_user.username }}!</span>
+        {% endif %}
+    </footer>
+    <script src="{{ url_for('static', filename='scroll.js') }}"></script>
+    <script src="{{ url_for('static', filename='nametagResize.js') }}"></script>
+    <script src="{{ url_for('static', filename='sorting.js') }}"></script>
+</body>
+</html>
